@@ -46,22 +46,25 @@ public class NotepadFrame extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		contentPane.add(menuBar, BorderLayout.NORTH);
 
-		JMenu mnFile = new JMenu("File");
+		JMenu mnFile = new JMenu(Messages.getString("NotepadFrame.mnFile")); //$NON-NLS-1$
 		menuBar.add(mnFile);
 
-		JMenuItem mntmNew = new JMenuItem("New");
+		JMenuItem mntmNew = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmNew")); //$NON-NLS-1$
 		mntmNew.setEnabled(false); // TODO
 		mntmNew.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
 				InputEvent.CTRL_MASK));
 		mnFile.add(mntmNew);
 
-		JMenuItem mntmOpen = new JMenuItem("Open...");
+		JMenuItem mntmOpen = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmOpen")); //$NON-NLS-1$
 		mntmOpen.setEnabled(false); // TODO
 		mntmOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O,
 				InputEvent.CTRL_MASK));
 		mnFile.add(mntmOpen);
 
-		JMenuItem mntmSave = new JMenuItem("Save...");
+		JMenuItem mntmSave = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmSave")); //$NON-NLS-1$
 		mntmSave.setEnabled(false); // TODO
 		mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
 				InputEvent.CTRL_MASK));
@@ -69,7 +72,8 @@ public class NotepadFrame extends JFrame {
 
 		mnFile.addSeparator();
 
-		JMenuItem mntmPrint = new JMenuItem("Print...");
+		JMenuItem mntmPrint = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmPrint")); //$NON-NLS-1$
 		mntmPrint.setEnabled(false); // TODO
 		mntmPrint.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P,
 				InputEvent.CTRL_MASK));
@@ -77,22 +81,25 @@ public class NotepadFrame extends JFrame {
 
 		mnFile.addSeparator();
 
-		JMenuItem mntmQuit = new JMenuItem("Quit");
+		JMenuItem mntmQuit = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmQuit")); //$NON-NLS-1$
 		mntmQuit.setEnabled(false); // TODO
 		mntmQuit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
 				InputEvent.CTRL_MASK));
 		mnFile.add(mntmQuit);
 
-		JMenu mnEdit = new JMenu("Edit");
+		JMenu mnEdit = new JMenu(Messages.getString("NotepadFrame.mnEdit")); //$NON-NLS-1$
 		menuBar.add(mnEdit);
 
-		JMenuItem mntmUndo = new JMenuItem("Undo");
+		JMenuItem mntmUndo = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmUndo")); //$NON-NLS-1$
 		mntmUndo.setEnabled(false); // TODO
 		mntmUndo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
 				InputEvent.CTRL_MASK));
 		mnEdit.add(mntmUndo);
 
-		JMenuItem mntmRedo = new JMenuItem("Redo");
+		JMenuItem mntmRedo = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmRedo")); //$NON-NLS-1$
 		mntmRedo.setEnabled(false); // TODO
 		mntmRedo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y,
 				InputEvent.CTRL_MASK));
@@ -100,31 +107,36 @@ public class NotepadFrame extends JFrame {
 
 		mnEdit.addSeparator();
 
-		JMenuItem mntmCut = new JMenuItem("Cut");
+		JMenuItem mntmCut = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmCut")); //$NON-NLS-1$
 		mntmCut.setEnabled(false); // TODO
 		mntmCut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
 				InputEvent.CTRL_MASK));
 		mnEdit.add(mntmCut);
 
-		JMenuItem mntmCopy = new JMenuItem("Copy");
+		JMenuItem mntmCopy = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmCopy")); //$NON-NLS-1$
 		mntmCopy.setEnabled(false); // TODO
 		mntmCopy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
 				InputEvent.CTRL_MASK));
 		mnEdit.add(mntmCopy);
 
-		JMenuItem mntmPaste = new JMenuItem("Paste");
+		JMenuItem mntmPaste = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmPaste")); //$NON-NLS-1$
 		mntmPaste.setEnabled(false); // TODO
 		mntmPaste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V,
 				InputEvent.CTRL_MASK));
 		mnEdit.add(mntmPaste);
 
-		JMenuItem mntmDelete = new JMenuItem("Delete");
+		JMenuItem mntmDelete = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmDelete")); //$NON-NLS-1$
 		mntmDelete.setEnabled(false); // TODO
 		mntmDelete
-				.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
+		.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
 		mnEdit.add(mntmDelete);
 
-		JMenuItem mntmSelectAll = new JMenuItem("Select All");
+		JMenuItem mntmSelectAll = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmSelectAll")); //$NON-NLS-1$
 		mntmSelectAll.setEnabled(false); // TODO
 		mntmSelectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A,
 				InputEvent.CTRL_MASK));
@@ -132,38 +144,42 @@ public class NotepadFrame extends JFrame {
 
 		mnEdit.addSeparator();
 
-		JMenuItem mntmGoToLine = new JMenuItem("Go To Line...");
+		JMenuItem mntmGoToLine = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmGoToLine")); //$NON-NLS-1$
 		mntmGoToLine.setEnabled(false); // TODO
 		mntmGoToLine.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G,
 				InputEvent.CTRL_MASK));
 		mnEdit.add(mntmGoToLine);
 
-		JMenu mnFind = new JMenu("Find");
+		JMenu mnFind = new JMenu(Messages.getString("NotepadFrame.mnFind")); //$NON-NLS-1$
 		menuBar.add(mnFind);
 
-		JMenuItem mntmFind = new JMenuItem("Find...");
+		JMenuItem mntmFind = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmFind")); //$NON-NLS-1$
 		mntmFind.setEnabled(false); // TODO
 		mntmFind.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F,
 				InputEvent.CTRL_MASK));
 		mnFind.add(mntmFind);
 
-		JMenuItem mntmFindAndReplace = new JMenuItem("Find and Replace...");
+		JMenuItem mntmFindAndReplace = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmFindAndReplace")); //$NON-NLS-1$
 		mntmFindAndReplace.setEnabled(false); // TODO
 		mntmFindAndReplace.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,
 				InputEvent.CTRL_MASK));
 		mnFind.add(mntmFindAndReplace);
 
-		JMenu mnHelp = new JMenu("Help");
+		JMenu mnHelp = new JMenu(Messages.getString("NotepadFrame.mnHelp")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
 
-		JMenuItem mntmHelpContents = new JMenuItem("Help Contents...");
+		JMenuItem mntmHelpContents = new JMenuItem(
+				Messages.getString("NotepadFrame.mntmHelpContents")); //$NON-NLS-1$
 		mntmHelpContents.setEnabled(false); // TODO
 		mntmHelpContents.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1,
 				0));
 		mnHelp.add(mntmHelpContents);
 
 		JMenuItem mntmAboutThisApplication = new JMenuItem(
-				"About this Application...");
+				Messages.getString("NotepadFrame.mntmAboutThisApplication")); //$NON-NLS-1$
 		mntmAboutThisApplication.setEnabled(false); // TODO
 		mntmAboutThisApplication.setAccelerator(KeyStroke.getKeyStroke(
 				KeyEvent.VK_F1, InputEvent.CTRL_MASK));
