@@ -3,8 +3,11 @@ package io.github.schas002.ytanja.notepad;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -19,7 +22,12 @@ import javax.swing.border.EmptyBorder;
 public class NotepadFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	
+	private static NotepadFrame frame = new NotepadFrame();
+
+	public static NotepadFrame getFrame() {
+		return frame;
+	}
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			@Override
@@ -83,7 +91,7 @@ public class NotepadFrame extends JFrame {
 
 		JMenuItem mntmQuit = new JMenuItem(
 				Messages.getString("NotepadFrame.mntmQuit")); //$NON-NLS-1$
-		mntmQuit.setEnabled(false); // TODO
+		mntmQuit.addActionListener(new QuitAction());
 		mntmQuit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
 				InputEvent.CTRL_MASK));
 		mnFile.add(mntmQuit);
@@ -132,7 +140,7 @@ public class NotepadFrame extends JFrame {
 				Messages.getString("NotepadFrame.mntmDelete")); //$NON-NLS-1$
 		mntmDelete.setEnabled(false); // TODO
 		mntmDelete
-		.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
+				.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
 		mnEdit.add(mntmDelete);
 
 		JMenuItem mntmSelectAll = new JMenuItem(
@@ -191,5 +199,18 @@ public class NotepadFrame extends JFrame {
 		JTextArea textArea = new JTextArea();
 		textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
 		textAreaWrapper.setViewportView(textArea);
+	}
+
+	private class QuitAction implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// thanks to Stack Overflow answer
+			// <https://stackoverflow.com/a/1235994>
+			// from camickr <https://stackoverflow.com/users/131872>
+            // (CC BY-SA 3.0)
+			NotepadFrame frame = NotepadFrame.getFrame();
+			frame.dispatchEvent(new WindowEvent(frame,
+					WindowEvent.WINDOW_CLOSING));
+		}
 	}
 }
